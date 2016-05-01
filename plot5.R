@@ -5,6 +5,7 @@ library(ggplot2)
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
+# subset data for motor from Baltimore City(24510)
 NEI.motor.baltimore <- subset(NEI, fips == "24510" & type == "ON-ROAD")
 NEI.motor <- aggregate(Emissions ~ year, NEI.motor.baltimore, sum)
 
